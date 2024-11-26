@@ -27,7 +27,6 @@ apply plugin: 'kotlin-android'
 android {
 
     namespace = "com.mtzinfotech.aws_s3_private_flutter.aws_s3_private_flutter"
-
     compileSdkVersion 31
 
     compileOptions {
