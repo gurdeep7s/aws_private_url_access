@@ -38,7 +38,7 @@ class AwsS3PrivateFlutter {
   _SignedRequestParams _buildSignedGetParams(
       {required String key, Map<String, String>? queryParams}) {
     final unEncodedPath =
-        (_bucketId != null || _bucketId!.isNotEmpty) ? "$_bucketId/$key" : key;
+        (_bucketId != null || (_bucketId?.isNotEmpty??false)) ? "$_bucketId/$key" : key;
     final uri = Uri.https(_host, unEncodedPath, queryParams);
     final payload = _SigV4._hashCanonicalRequest('');
     final datetime = _SigV4._generateDatetime();
